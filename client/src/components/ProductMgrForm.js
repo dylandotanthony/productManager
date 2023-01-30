@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const ProductMgr= () => {
+const ProductMgrForm= (props) => {
+    const {productMgr, setProductMgr} = props;
     const [title, setTitle] = useState(""); 
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -18,6 +19,7 @@ const ProductMgr= () => {
             .then(res=>{
                 console.log(res); // always console log to get used to tracking your data!
                 console.log(res.data);
+                setProductMgr([...productMgr])
             })
             .catch(err=>console.log(err))
     }
@@ -50,5 +52,5 @@ const ProductMgr= () => {
         </div>
     )
 }
-export default ProductMgr;
+export default ProductMgrForm;
 
