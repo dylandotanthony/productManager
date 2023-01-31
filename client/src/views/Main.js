@@ -5,12 +5,12 @@ import ProductMgrList from '../components/ProductMgrList';
 const Main = (props) => {
     
     const [productMgr, setProductMgr] = useState([])
-    
+
     return (
         <div>
             <ProductMgrForm productMgr={productMgr} setProductMgr={setProductMgr} />
             <hr/>
-            <ProductMgrList productMgr={productMgr} setProductMgr={setProductMgr} />
+            <ProductMgrList productMgr={productMgr} setProductMgr={setProductMgr}  />
         </div>
     )
 }
